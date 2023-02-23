@@ -12,7 +12,8 @@ pipeline {
         stage('deploy') {
             steps {
                     sh    """
-                        kubectl apply -f k8s-files
+                        kubectl create ns dev
+                        kubectl apply -f k8s-files -n dev
                     """
             }
         }
