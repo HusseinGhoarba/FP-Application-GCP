@@ -3,10 +3,12 @@ pipeline {
     stages {
         stage('build') {
             steps {
+            	withCredentials([usernamePassword(credentialsId: 'docker-user', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sh   """
-                        docker build -t gcr.io/hussein-ghoraba/hello-vois ./app/
-                        docker push gcr.io/hussein-ghoraba/hello-vois
+                        docker build -t hussein-ghoraba/hello-vois ./app/
+                        docker push hussein-ghoraba/hello-vois
                     """
+                 }
             }
         }
         stage('deploy') {
