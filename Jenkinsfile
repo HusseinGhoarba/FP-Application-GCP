@@ -15,7 +15,6 @@ pipeline {
         stage('deploy') {
             steps {
                     sh    """
-                        kubectl create ns dev
                         kubectl apply -f kubernetes -n dev
                     """
             }
