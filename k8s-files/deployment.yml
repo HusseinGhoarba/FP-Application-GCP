@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-vois
+  labels:
+    app: hello-vois
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-vois
+  template:
+    metadata:
+      labels:
+        app: hello-vois
+    spec:
+      containers:
+        - name: hello-vois
+          image: gcr.io/hussein-ghoraba/hello-vois
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources: {}
