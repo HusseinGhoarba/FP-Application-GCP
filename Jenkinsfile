@@ -5,8 +5,8 @@ pipeline {
             steps {
             	withCredentials([usernamePassword(credentialsId: 'docker-user', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sh   """
-                        docker build -t hussein-ghoraba/hello-vois ./app/
-                        docker push hussein-ghoraba/hello-vois
+                        docker build -t husseinghoraba/hello-vois ./app/
+                        docker push husseinghoraba/hello-vois
                     """
                  }
             }

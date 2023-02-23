@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: hello-vois
-          image: hussein-ghoraba/hello-vois
+          image: husseinghoraba/hello-vois
           imagePullPolicy: Always
           ports:
             - containerPort: 80
